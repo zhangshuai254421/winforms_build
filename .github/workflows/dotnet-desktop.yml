@@ -49,10 +49,10 @@ jobs:
 
   build:
 
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-        Platform: [x86, x64]
+    #strategy:
+    #  matrix:
+        #configuration: [Debug, Release]
+        #Platform: [x86, x64]
         #dotnet-version: [ '8.0.100-preview.3.23178.7', '8.0.0-preview.5.23212.1' ]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
@@ -84,7 +84,7 @@ jobs:
     #- name: Install
     #  run: dotnet restore
     - name: Build
-      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x64
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
 
